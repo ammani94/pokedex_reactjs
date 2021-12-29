@@ -21,12 +21,12 @@ export default function About() {
   const handleSubmit = event => {
     event.preventDefault();
 
-    const url = 'http://localhost:3001/api/stuff'
+    const url = 'http://localhost:3001/user/signin'
     //console.log(email)
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user_email:email, user_password:password })
+        body: JSON.stringify({ email:email, password:password })
     };
     fetch(url, requestOptions)
         .then(response => console.log('response',response))
